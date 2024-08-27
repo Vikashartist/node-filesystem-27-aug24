@@ -1,4 +1,4 @@
-/// Http module node js.
+/// Http module node js of request and response server using node js and the response using url base forword /.
 
 const http = require('http');
 const cs = http.createServer((request, response) => {
