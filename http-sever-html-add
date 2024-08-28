@@ -1,0 +1,41 @@
+/// this is event in node js.
+// const EventEmitter = require('node:events');
+
+// class MyEmitter extends EventEmitter {}
+
+// const myEmitter = new MyEmitter();
+// myEmitter.on('waterfall', () => {
+//     console.log('moter is on !!');
+//     console.log('The watrer is full Remider  ');
+//     setTimeout(() => {
+//         console.log('!alert it is a reminder! ');
+//     }, 3000);
+
+// });
+// myEmitter.emit('waterfall');
+
+
+
+// creating a http server.
+const http = require('http');
+const port = process.env.PORT || 3000;
+
+const cs = http.createServer((req, res) => {
+    console.log(req.url);
+    if (req.url == "/") {
+        res.end('this is the forword slash ');
+    } else if (req.url == "/me") {
+        res.end('This is me ');
+    }
+    res.statusCode = 200;
+    res.setHeader('Content-type', 'text/html');
+    res.end("<h4> workign on port : 3000 node js Server....</h4><br><a href='demo'> this is a demo node js link </a>");
+
+
+});
+cs.listen(
+    port, () => {
+
+        console.log(`server listining on port ${port}`);
+
+    });
